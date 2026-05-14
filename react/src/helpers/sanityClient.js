@@ -1,11 +1,11 @@
 import {createClient} from '@sanity/client'
 
 const client = createClient({
-  projectId: 'YOUR_PROJECT_ID',
+  projectId: 'qbaoxtiu',
   dataset: 'production',
-  apiVersion: '2024-06-01',
+  apiVersion: '2026-05-14',
   useCdn: true,
-  token: "YOUR_API_TOKEN"
+  token: "sk0Tdchxp8D6KYPjdCbgMl4MxQENXVq5k3FVgakr2TGsEYotiGAnn14Bzwqxsx8rfTQ35a5B8VBB4VAkO8NnfrdDlkmFTgCT8Rpc2sg9nD9fhR4wHUfid5QB0yyiSv4BgyI06pxQJVxft4mdhuH8Nohntvlw2wvLLjeUTRmT8v4HOqccbLGp"
 })
 
 export default client
