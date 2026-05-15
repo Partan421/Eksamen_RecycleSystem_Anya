@@ -12,16 +12,18 @@ export default function Home() {
         "forSale": *[_type == "product" && status == "active" && listingType == "sale"]
           | order(_createdAt desc)[0...5]{
             _id, title, price
-          },
+          },  
         "forTrade": *[_type == "product" && status == "active" && listingType == "trade"]
           | order(_createdAt desc)[0...5]{
             _id, title, tradeWish
           }
       }`
+          //Første query henter ut id, title og price. Den ser på at alt innenfor typen produkt, status, aktiv og listingType//
+
       const result = await client.fetch(query)
       setForSale(result.forSale)
       setForTrade(result.forTrade)
-    }
+    } // Const venter på resultat av query, og setter info inn i setForSale og setForTrade//
     fetchProducts()
   }, [])
 

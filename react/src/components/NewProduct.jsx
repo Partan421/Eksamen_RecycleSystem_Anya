@@ -22,7 +22,7 @@ export default function NewProduct({ loggedInUser }) {
     const fetchSubcategories = async () => {
       const query = `*[_type == "subcategory"] | order(title asc){
         _id, title, "category": category->title
-      }`
+      }`//Spørring ser på alt av "subcategory" og lister dem ut i title, også kommer id, title, category//
       const data = await client.fetch(query)
       setSubcategories(data)
     }
@@ -45,7 +45,7 @@ export default function NewProduct({ loggedInUser }) {
       setError('Velg en underkategori.')
       return
     }
-    if (listingType === 'sale' && !price.trim()) {
+    if (listingType === 'sale' && !price.trim()) { 
       setError('Pris er påkrevd for salg.')
       return
     }
